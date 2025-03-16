@@ -6,5 +6,24 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #1a1a1a;
+    background-color: rgb(155,155,155);
+    background-image: url('RPG_bcg.png'); /* Exemplo de padrão de vinhas */
+    background-repeat: repeat;
+    color: #fff;
+}
+
+.atribute-frame {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    pointer-events: none; /* Evita interferência nos cliques */
+    z-index: 2;
+}
+
+.pericia-frame {
+    position: absolute;
+    width: 180px;
+    height: 60px;
+    pointer-events: none;
+    z-index: 2;
 }
