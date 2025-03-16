@@ -381,6 +381,8 @@ function atualizarDescricaoClasse() {
 function exibirImagem() {
   let urlImagem = imagemUrlInput.value();
   fotoUrl = urlImagem;
+  // Define o atributo crossorigin para que a imagem possa ser capturada
+  imagemDisplay.elt.crossOrigin = "anonymous";
   imagemDisplay.attribute('src', urlImagem);
   imagemUrlInput.remove();
   verificarImagemButton.remove();
