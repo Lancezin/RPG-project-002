@@ -393,5 +393,17 @@ function exibirImagem() {
   através do script Node.js (screenshot.js/screenshot.sh).
 */
 function salvarFicha() {
-  alert("Para capturar a tela inteira, por favor, execute o script 'screenshot.sh' no terminal.");
+  if (confirm("Você quer tirar uma screenshot?")) {
+    html2canvas(document.body).then(canvas => {
+      // Cria um link para download
+      let link = document.createElement("a");
+      link.href = canvas.toDataURL("image/png");
+      link.download = "ficha.png";
+      // Simula um clique para iniciar o download
+      link.click();
+    }).catch(err => {
+      console.error("Erro ao capturar a screenshot:", err);
+      alert("Ocorreu um erro ao tentar capturar a tela.");
+    });
+  }
 }
